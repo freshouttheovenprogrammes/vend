@@ -4,7 +4,7 @@ describe "As a user" do
   context "when I visit a specific vending machine page" do
     it "I see the name of all of the snacks associated with that vending machine along with their price" do
       owner = Owner.create!(name: "bob")
-      machine = Machine.create!(location: "Place", owner: owner)
+      machine = Machine.create!(location: "Place", owner_id: owner.id)
       snack = Snack.create!(name: "cheeto", price: 100, machine_id: machine.id)
       snack = Snack.create!(name: "freca", price: 10, machine_id: machine.id)
       snack = Snack.create!(name: "mac n cheese", price: 100, machine_id: machine.id)
